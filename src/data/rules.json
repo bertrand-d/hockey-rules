@@ -1,0 +1,41 @@
+{
+    "rules": [
+        {
+            "id": "hors-jeu",
+            "title": "Le hors-jeu",
+            "description": "Un joueur est en position de hors-jeu lorsque ses deux patins sont au-delà de la ligne bleue de la zone d'attaque avant que le palet n'entre dans cette zone.",
+            "steps": [
+                {
+                    "id": "step1",
+                    "description": "Si le joueur qui possède le palet souhaite attaquer",
+                    "animationStart": 0,
+                    "animationEnd": 2000
+                },
+                {
+                    "id": "step2",
+                    "description": "Il doit entrer dans la zone d'attaque en contrôlant le palet",
+                    "animationStart": 2000,
+                    "animationEnd": 4000
+                },
+                {
+                    "id": "step3",
+                    "description": "Si un allié est dans la zone d'attaque avant que le palet n'entre dans cette zone",
+                    "animationStart": 4000,
+                    "animationEnd": 6000
+                },
+                {
+                    "id": "step4",
+                    "description": "Le joueur qui possède le palet doit rester dans la zone neutre en attendant que ses alliés sortent de la zone d'attaque",
+                    "animationStart": 6000,
+                    "animationEnd": 8000
+                },
+                {
+                    "id": "step5",
+                    "description": "Le joueur qui possède le palet peut alors entrer dans la zone d'attaque",
+                    "animationStart": 8000,
+                    "animationEnd": 10000
+                }
+            ]
+        }
+    ]
+}

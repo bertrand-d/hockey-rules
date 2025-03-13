@@ -1,0 +1,61 @@
+// Variables spécifiques aux explications
+$explanation-bg: #fff;
+$explanation-shadow: rgba(0, 0, 0, 0.1);
+$heading-color: #333;
+$text-color: #666;
+$step-active-color: #4CAF50;
+$step-inactive-color: #ccc;
+
+.rule-explanation {
+    margin-top: $spacing-medium;
+    padding: $spacing-small;
+    background-color: $explanation-bg;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $explanation-shadow;
+
+    h2 {
+        color: $heading-color;
+        margin-bottom: 15px;
+    }
+
+    p {
+        line-height: 1.6;
+        color: $text-color;
+    }
+}
+
+.rule-step {
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 3px solid $step-inactive-color;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.7;
+
+    &.active {
+        border-left-color: $step-active-color;
+        opacity: 1;
+        background-color: rgba($step-active-color, 0.1);
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+}
+
+.rule-explanation-step {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+
+    p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #333;
+    }
+} 

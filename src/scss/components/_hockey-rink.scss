@@ -1,0 +1,107 @@
+// Variables spécifiques à la patinoire
+$rink-width: 800px;
+$rink-height: 400px;
+$line-width: 2px;
+$line-color-red: red;
+$line-color-blue: blue;
+$circle-size: 90px;
+$center-circle-size: 80px;
+
+.rink-container {
+    width: 100%;
+    max-width: $rink-width;
+    margin: 0 auto;
+}
+
+.hockey-rink {
+    position: relative;
+    width: 100%;
+    height: $rink-height;
+    background-color: #fff;
+    border: $line-width solid #000;
+    border-radius: 100px;
+    overflow: hidden;
+
+    @include breakpoint(sm) {
+        height: 250px;
+        border-radius: 50px;
+   } 
+
+    // Lignes rouges
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: $line-width;
+        height: 100%;
+        background-color: $line-color-red;
+        top: 0;
+    }
+
+    &::before {
+        left: 10%;
+    }
+
+    &::after {
+        right: 10%;
+    }
+
+    // Ligne centrale rouge
+    .center-line {
+        position: absolute;
+        width: $line-width;
+        height: 100%;
+        background-color: $line-color-red;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    // Lignes bleues
+    .blue-line-left,
+    .blue-line-right {
+        position: absolute;
+        width: $line-width;
+        height: 100%;
+        background-color: $line-color-blue;
+        top: 0;
+    }
+
+    .blue-line-left {
+        left: 35%;
+    }
+
+    .blue-line-right {
+        right: 35%;
+    }
+
+    // Cercles d'engagement
+    .face-off-circle {
+        position: absolute;
+        width: $circle-size;
+        height: $circle-size;
+        border: $line-width solid $line-color-red;
+        border-radius: 50%;
+
+        @include breakpoint(sm) {
+            height: 60px;
+            width: 60px;
+       } 
+    }
+
+    // Cercle central
+    .center-circle {
+        position: absolute;
+        width: $center-circle-size;
+        height: $center-circle-size;
+        border: $line-width solid $line-color-blue;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint(sm) {
+            height: 60px;
+            width: 60px;
+       } 
+    }
+} 

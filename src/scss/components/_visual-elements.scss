@@ -1,0 +1,209 @@
+// Variables pour les éléments visuels
+$player-size: 40px;
+$puck-size: 15px;
+$player-color: #8B0000; // Rouge foncé
+$puck-color: #000000;
+
+.player,
+.player-ally-1,
+.puck {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+}
+
+.player,
+.player-ally-1,
+.player-ally-2,
+.player-ally-3,
+.player-ally-4 {
+    width: $player-size;
+    height: $player-size;
+    background-color: $player-color;
+    border: 2px solid #000;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.puck {
+    width: $puck-size;
+    height: $puck-size;
+    background-color: $puck-color;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+// Positions pour le hors-jeu
+.hors-jeu {
+    &.player {
+        &.step-0 {
+            opacity: 1;
+            left: 55%;
+            top: 15%;
+        }
+
+        &.step-1 {
+            opacity: 1;
+            left: 70%;
+            top: 15%;
+        }
+
+        &.step-2 {
+            opacity: 1;
+            left: 55%;
+            top: 15%;
+        }
+
+        &.step-3 {
+            opacity: 1;
+            left: 60%;
+            top: 45%;
+        }
+
+        &.step-4 {
+            opacity: 1;
+            left: 70%;
+            top: 45%;
+        }
+    }
+
+    &.puck {
+        &.step-0 {
+            opacity: 1;
+            left: 58%;
+            top: 13.5%;
+
+            @include breakpoint(sm) {
+                left: 61%;
+            }
+        }
+
+        &.step-1 {
+            opacity: 1;
+            left: 73%;
+            top: 13.5%;
+
+            @include breakpoint(sm) {
+                left: 76%;
+            }
+        }
+
+        &.step-2 {
+            opacity: 1;
+            left: 58%;
+            top: 13.5%;
+
+            @include breakpoint(sm) {
+                left: 61%;
+            }
+        }
+
+        &.step-3 {
+            opacity: 1;
+            left: 63%;
+            top: 43.5%;
+
+            @include breakpoint(sm) {
+                left: 66%;
+           } 
+        }
+
+        &.step-4 {
+            opacity: 1;
+            left: 73%;
+            top: 43.5%;
+
+            @include breakpoint(sm) {
+                left: 76%;
+           } 
+        }
+    }
+
+    &.player-ally-1 {
+        &.step-2 {
+            opacity: 1;
+            right: 20%;
+            bottom: 15%;
+        }
+
+        &.step-3 {
+            opacity: 1;
+            right: 40%;
+            bottom: 15%;
+        }
+
+        &.step-4 {
+            opacity: 1;
+            right: 40%;
+            bottom: 15%;
+        }
+    }
+}
+
+// Positions pour le dégagement
+.degagement {
+    &.player {
+        &.step-0 {
+            left: 20%;
+            top: 50%;
+        }
+
+        &.step-1 {
+            left: 25%;
+            top: 50%;
+        }
+
+        &.step-2 {
+            left: 30%;
+            top: 50%;
+        }
+
+        &.step-3 {
+            left: 35%;
+            top: 50%;
+        }
+    }
+
+    &.puck {
+        &.step-0 {
+            left: 20%;
+            top: 50%;
+        }
+
+        &.step-1 {
+            left: 40%;
+            top: 50%;
+        }
+
+        &.step-2 {
+            left: 60%;
+            top: 50%;
+        }
+
+        &.step-3 {
+            left: 80%;
+            top: 50%;
+        }
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
